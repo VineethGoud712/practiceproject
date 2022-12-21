@@ -1,0 +1,38 @@
+<div class="row m-1" style="height:40px!important;">
+    <div class="col-12 bg-color text-center" style="height:40px!important;">
+      <h5 class="text-white p-1">Payments Pending List</h5>
+    </div>
+  </div>
+  
+  <div class="p-2">
+      <table class="table m-0 tabled-bordered table-striped">
+          <thead class="thead-dark ">
+            <tr>
+              <th>S.No</th>
+              <th>Customer Id</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>City</th>
+              <th>Street</th>
+              <th>State</th>
+              <th>postal code</th>
+              <th>Telephone</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of dtls2;let i= index">
+              <td>{{i+1}}</td>
+              <td>{{data.customerId}}</td>
+              <td>{{data.firstName}}</td>
+              <td>{{data.lastName}}</td>
+              <td>{{data.city}}</td>
+              <td>{{data.street}}</td>
+              <td>{{data.state}}</td>
+              <td>{{data.postalcode}}</td>
+              <td>{{data.phone}}</td>
+              <td class="text-danger">Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

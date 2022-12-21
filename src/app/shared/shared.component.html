@@ -1,0 +1,94 @@
+<h1>{{myInput}}</h1>
+<button (click)="createIframe()">Create Iframe</button>
+<div class="row">
+    <div class="col">
+        <input type="text" [(ngModel)]="inputval">
+
+        <button class="btn btn-primary m-1" (click)="add()">Add 30mins</button>
+    </div>
+    
+  </div>
+<div id="div" style="width:1000px;height:500px;display:none;">
+    <iframe src="https://www.w3schools.com/" frameborder="0" width="500px" height="500px"></iframe>
+</div>
+ <div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered" >
+            <thead>
+                <tr>
+                    <th><input type="checkbox"  
+                        [checked]="isAllCheckBoxChecked()"  
+                      (change)="checkAllCheckBox($event)" ></th>
+                    <th>Name</th>
+                    <th>class</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of data">
+                    <td><input type="checkbox" value="{{d.id}}"  [(ngModel)]="d.checked"  ></td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.class}}</td>
+                </tr>
+            </tbody>
+        </table>
+       <!-- <button class="btn btn-primary" (click)="submit()"></button> -->
+    </div>
+    <div class="col-md-6">
+        <table class="table table-bordered" >
+            <thead>
+                <tr>
+                    <th><input type="checkbox"   ></th>
+                    <th>Name</th>
+                    <th>class</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d2 of data2">
+                    <td><input type="checkbox" value="{{d2.id}}"  [(ngModel)]="d2.checked"  (ngModelChange)="uncheckOther(d2,$event)"></td>
+                    <td>{{d2.name}}</td>
+                    <td>{{d2.class}}</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+ </div>
+
+ <button type="button" class="btn btn-primary" data-toggle="modal"(click)="submit()" data-target="#exampleModal">
+    Submit
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered" >
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Name</th>
+                        <th>class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d2 of onlyCheckedvalues">
+                        <td><input type="checkbox" value="{{d2.id}}"  [(ngModel)]="d2.checked"  (ngModelChange)="uncheckOther(d2,$event)"></td>
+                        <td>{{d2.name}}</td>
+                        <td>{{d2.class}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 

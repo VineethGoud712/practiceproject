@@ -1,0 +1,10 @@
+<table class="table table-bordered">
+    <tr>
+        <th *ngFor="let key of arrayKey" >{{key}}</th>
+    </tr>
+    <tr *ngFor="let values of arrayValues">
+        <td *ngFor="let val of values,let i = index">
+         {{val}}
+        </td>
+    </tr>
+</table>

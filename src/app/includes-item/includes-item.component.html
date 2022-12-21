@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" [(ngModel)]="name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="class" [(ngModel)]="class">
+        </div>
+        <button class="btn btn-success" (click)="add()">Add</button>
+    </div>
+</div>
+<div class="row m-2">
+    <div class="table">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>class</th>
+            </tr>
+            <tr *ngFor="let i of items; let in = index"  (click)="reset(in,i)" class="cursor">
+                <td>{{i.name}}</td>
+                <td>{{i.class}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

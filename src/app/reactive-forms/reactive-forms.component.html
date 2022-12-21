@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row mt-2">
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="usr">Email:</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  placeholder="Enter Email"
+                  name="email"
+                  class="form-control border1"
+                  formControlName="email"
+                />
+                <div
+                class="text-danger"
+                *ngIf="
+                  loginForm.get('email').invalid && loginForm.get('email').touched
+                "
+              >
+                *Email is Required
+              </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="usr">Password:</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  placeholder="Enter Email"
+                  name="email"
+                  class="form-control border1"
+                  formControlName="password"
+                />
+                <div
+                class="text-danger"
+                *ngIf="
+                  loginForm.get('password').invalid && loginForm.get('password').touched
+                "
+              >
+                *Password is Required
+              </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-success  mt-4" [disabled]="!loginForm.valid">Submit</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<div class="conatiner">
+    <app-loaction [hero]="data" (parentfunnnn)="parentfunnnn($event)"></app-loaction>
+</div>

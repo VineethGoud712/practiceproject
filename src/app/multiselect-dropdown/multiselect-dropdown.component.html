@@ -1,0 +1,25 @@
+  <div class="row" *ngIf="showloader">
+    <h1>Angular</h1>
+  </div>
+  <div class="row m-2">
+    <input type="text" #id (keyup)="myFun(id.value)">
+  </div>
+
+<p>Shared compontent</p>
+<p>{{viewChild?.count}}</p>
+<button (click)="inc()">Increment</button>
+<button (click)="dec()">Decrement</button>
+<app-shared #viewChild [myInput]='child'></app-shared>
+<br><br><br>
+<div class="container">
+    <h1>parent</h1>
+   <app-child>
+    <h1>Box 1</h1>
+   </app-child> 
+   <app-child>
+    <h1>Box 2</h1>
+   </app-child> 
+   <app-child>
+    <h1>Box 3</h1>
+   </app-child> 
+</div>

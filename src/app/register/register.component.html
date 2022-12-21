@@ -1,0 +1,92 @@
+<div class="container mt-5 ml-8 mr-8 " >
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Register Here</h2>
+        </div>
+    </div>
+<div class="row" tabindex="-1">
+    <div class="col-md-4">
+        <label for="usr">Name:</label>
+        <input #name
+        autocomplete="off"
+          type="text"
+          placeholder="Name"
+          name="name"
+          class="form-control border1"
+          [(ngModel)]="reguser.name"
+        />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <label for="usr">Email:</label>
+        <input
+        autocomplete="off"
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          class="form-control border1"
+          [(ngModel)]="reguser.email"
+        />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <label for="usr">Password:</label>
+        <input
+        autocomplete="off"
+          type="text"
+          placeholder="Enter Password"
+          name="password"
+          class="form-control border1"
+          [(ngModel)]="reguser.password"
+        />
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-primary m-1" (click)="register()">Register</button>
+        <button type="button" class="btn btn-primary m-1" routerLink="/login">Login</button>
+        <button type="submit" class="btn btn-primary m-1" (click)="register1()">Register</button>
+    </div>
+</div>
+</div>
+<!-- 
+  <div class="modal fade" #exampleModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header light-gradient">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <button class="btn btn-success" (click)="openPopup()"> open</button>
+    </div>
+  </div> -->
+
+  <div class="container">
+    <label for="">Only Numbers are Allowed</label>
+    <input  class="form-control border1 m-1" type="text" (keypress)="onlyNumbersAreAllowed($event)">
+    <label for="">Only Charcters are Allowed</label>
+    <input  class="form-control border1 m-1" type="text" (keypress)="onlyCharacterAreAllowed($event)">
+    <label for="">Number and Charcters are Allowed</label>
+    <input  class="form-control border1 m-1" type="text" (keypress)="onlyNumbersAndCharacterAreAllowed($event)">
+  </div>
+  <div class="container">
+    <label for="">Date</label>
+  </div>
+
+

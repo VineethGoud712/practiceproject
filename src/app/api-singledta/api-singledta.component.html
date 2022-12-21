@@ -1,0 +1,24 @@
+<table class="table table-dark">
+    <tr class="thead-light">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+        <td [ngStyle]="{'background':color}">{{databyId.userId}}</td>
+        <td>{{databyId.title}}</td>
+        <td>{{databyId.body}}</td>
+    </tr>
+</table>
+
+<div class="row">
+<div class="col-6">
+    <a routerLink="/address">Address</a>
+</div>
+<div class="col-6">
+    <a routerLink="/company">Company</a>
+</div>
+</div>
+<!-- <pre>
+    {{databyId | json}}
+</pre> -->

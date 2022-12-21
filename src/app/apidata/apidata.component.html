@@ -1,0 +1,41 @@
+<div class="row m-2">
+     <div class="col">
+       <button class="btn btn-danger m-1" type="button" title="click here to download Excel Sheet" (click)="fileDownload()">Export to Excel Sheet</button>
+       <button class="btn btn-danger m-1" type="button" title="click here to download Excel Sheet" (click)="pdfDownload()">Download Pdf</button>
+     </div>
+</div>
+<div class="row" #content style="height:500px;">
+<table class="table table-bordered table-striped" style="height:800px!important">
+    <tr class="thead-dark ">
+        <th>UserId</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr *ngFor="let d of data" >
+        <td [ngClass]="{'high-light':d.userId == 1,'high-light2':d.userId == 2 }">{{d.userId }}</td>
+        <td> <a (click)="idData(d.id)">{{d.id }}</a></td>
+        <td>{{d.title }}</td>
+        <td>{{d.body}}</td>
+    </tr>
+</table>
+</div>
+<!-- <form>
+    <input type="number" #box (keyup)=" filterData()" >
+    
+</form> -->
+
+<!-- <table class="table table-bordered table-striped">
+    <tr class="thead-dark ">
+        <th>UserId</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr *ngFor="let d2 of data2" >
+        <td [ngClass]="{'high-light':d2.userId == 1,'high-light2':d2.userId == 2 }">{{d2.userId }}</td>
+        <td>{{d2.id}}</td>
+        <td>{{d2.title }}</td>
+        <td>{{d2.body}}</td>
+    </tr>
+</table> -->

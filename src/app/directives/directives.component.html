@@ -1,0 +1,47 @@
+<table class="table table-bordered">
+    <tr class="thead-dark">
+        <th>ID</th>
+        <th>Name</th>
+        <th>ROLE</th>
+    </tr>
+    <tr *ngFor="let users of users">
+        <td>{{users.id}}</td>
+        <td>{{users.name}}</td>
+        <td>{{users.role}}</td>
+    </tr>
+</table>
+
+<h1>NgIf</h1>
+
+<div *ngIf="login; else logout">
+<h1>User loged In</h1>
+</div>
+<ng-template #logout>
+ <p>User logged out </p>
+</ng-template>
+
+<p>--------------------</p>
+<h1>NgSwitch</h1>
+<h3>select Name :</h3>
+<select (change)="choice($event.target)">
+    <option value="">select Name</option>
+    <option *ngFor="let c of users" [value]="c.role">{{c.name}}</option>
+</select>
+<div [ngSwitch]="selectedName">
+    <div *ngSwitchCase="'Fullstack'" class="jumbotron">
+        <h1>Vineeth is the fullstack developer </h1>
+    </div>
+    <div *ngSwitchCase="'Web-developer1'" class="jumbotron">
+        <h1>Teja is the fullstack developer </h1>
+    </div>
+    <div *ngSwitchCase="'Web-developer2'" class="jumbotron">
+        <h1> Harika is the fullstack developer </h1>
+    </div>
+    <div *ngSwitchDefault class="jumbotron">
+        <h1> select name</h1>
+    </div>
+</div>
+
+<p>{{pf}}- data coming from parent</p>
+<button class=" btn btn-primary " (click)="passData()">send data to parent </button>
+<h1>{{date | age}}</h1>

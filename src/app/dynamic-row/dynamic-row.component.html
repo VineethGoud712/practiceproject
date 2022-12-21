@@ -1,0 +1,40 @@
+<div class="container">
+    <form [formGroup]="addForm" (ngSubmit)="dynamicData()">
+        <div class="row">
+            <div class="col">
+                <label for="">Name</label>
+                <input type="text" class="form-control" formControlName="name" name="name">
+            </div>
+        </div>
+        <div class="row" formArrayName="address">
+           
+           <div class="col">
+            <br>
+            <div class="row" *ngFor="let ad of addForm.controls.address['controls']; let i= index" [formGroupName]="i">
+                <div class="col-md-3 p-2">
+                  <input type="text" formControlName="add1" class="form-control" id="{{i}}">
+                </div>
+                <div class="col-md-3 p-2">
+                    <input type="text" formControlName="street" class="form-control" id="{{i}}">
+                  </div>
+                  <div class="col-md-3 p-2">
+                    <input type="text" formControlName="pin" class="form-control" id="{{i}}">
+                  </div>
+                  <div class="col-md-3 p-2">
+                    <button class="btn-danger btn btn-md" (click)="deleteRow(i)">Delete</button>
+                  </div>
+            </div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-md" (click)="addrow()">Add row</button>
+            </div>
+        </div>
+     <div class="row ">
+        <div class="col p-2">
+            <button type="submit" class="btn btn-success btn-md">submit</button>
+        </div>
+     </div>
+</form>
+</div>

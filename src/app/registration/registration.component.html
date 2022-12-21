@@ -1,0 +1,158 @@
+<div class="container mt-5 ml-8 mr-8">
+<form [formGroup]="myform" (submit)="registerUser()">
+  <div class="row">
+    <div class="col">
+      <label for="usr">Name:</label>
+      <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        formControlName="name"
+        class="form-control"
+        id="usr"
+      />
+    </div>
+  </div>
+  <div
+    class="error"
+    *ngIf="
+      myform.get('email').hasError('required') && myform.get('email').touched
+    "
+  >
+    *This is field Required
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="usr">Email:</label>
+      <input
+        type="text"
+        placeholder="Email"
+        name="email"
+        formControlName="email"
+        class="form-control"
+        id="usr"
+      />
+    </div>
+  </div>
+
+  <div class="error" *ngIf="myform.get('email').invalid">
+    <p
+      *ngIf="
+        myform.get('email').touched &&
+        myform.get('email').hasError('required')
+      "
+    >
+      &nbsp;*Email is required
+    </p>
+    <p *ngIf="myform.get('email').hasError('email')">
+      &nbsp;*Please enter valid email
+    </p>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <label for="usr">Password:</label>
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        formControlName="password"
+        class="form-control"
+        id="usr"
+      />
+    </div>
+  </div>
+
+  <div class="error" *ngIf="myform.get('password').invalid">
+    <p
+      *ngIf="
+        myform.get('password').touched &&
+        myform.get('password').hasError('required')
+      "
+    >
+      &nbsp;*Password is required
+    </p>
+    <p *ngIf="myform.get('password').hasError('minlength')">
+      &nbsp;*Password must be greater than 8 charaters
+    </p>
+  </div>
+  <div class="row">
+    <div class="col">
+        <label for="usr">Confirm Password:</label>
+        <input type="password"  
+        placeholder="Confirm password"
+        name="password_confirmation"
+        formControlName="password_confirmation"
+        class="form-control"
+        id="usr"
+        required>
+    </div>
+  </div>
+
+  <div
+  class="error"
+  *ngIf="
+    myform.get('password_confirmation').hasError('required') &&
+    myform.get('password_confirmation').touched
+  ">
+&nbsp;*This is field Required
+</div>
+<br>
+<div class="row">
+    <div class="col">
+        <label for="">Date:</label>
+        <input type="date"  placeholder="Date of Birth"
+        displayFormat="MM/DD/YY"
+        max="{{maxDate}}"
+        name="dob"
+        formControlName="dob"
+        [(ngModel)]="dates"
+        required>
+    </div>
+</div>
+<div
+              class="error"
+              *ngIf="
+                myform.get('dob').hasError('required') &&
+                myform.get('dob').touched
+              "
+            >
+             &nbsp; *This is field Required
+            </div>
+
+<div class="row">
+    <div class="col">
+        <label for="formFile" class="form-label">
+           
+            Upload Profile
+          </label>
+          <input
+            class="form-control"
+            style="display: none"
+            accept="image/*"
+            type="file"
+            id="formFile"
+            name="avatar"
+            (change)="profile($event.target)"
+            required
+          />
+          <img
+            *ngIf="url"
+            [src]="url"
+            alt=""
+            height="40"
+            width="40"
+            style="float: right; margin-top: -10px"
+          />
+
+    </div>
+
+</div>
+   <div class="row">
+     <div class="col">
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+   </div>        
+            
+</form>
+</div>

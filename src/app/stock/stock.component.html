@@ -1,0 +1,90 @@
+<div class="bg-color">
+    <div class="container pt-5 ml-8 mr-8 " style="margin-left:300px!important">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="text-white">Enter Stock Details Here</h2>
+            </div>
+        </div>
+    <div class="row" tabindex="-1">
+        <div class="col-md-4">
+            <label for="usr">Stock ID</label>
+            <input #name
+            autocomplete="off"
+              type="text"
+              placeholder="Enter Stock ID"
+              name="name"
+              class="form-control border1"
+              
+            />
+        </div>
+        <div class="col-md-4">
+            <label for="usr">First Name</label>
+            <input #name
+            autocomplete="off"
+              type="text"
+              placeholder="Enter First Name"
+              name="name"
+              class="form-control border1"
+              [(ngModel)]="fname"
+            />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label for="usr">Middle Name</label>
+            <input #name
+            autocomplete="off"
+              type="text"
+              placeholder="Enter Middle Name"
+              name="name"
+              class="form-control border1"
+              [(ngModel)]="mname"
+            />
+        </div>
+
+
+        <div class="col-md-4">
+            <label for="usr">Last Name </label>
+            <input
+            autocomplete="off"
+              type="text"
+              placeholder="Enter  Last Name"
+              name="email"
+              class="form-control border1"
+              [(ngModel)]="lname"
+            />
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label for="usr">Quantity</label>
+            <input #name
+            autocomplete="off"
+              type="text"
+              placeholder="Enter Quantity"
+              name="name"
+              class="form-control border1"
+              [(ngModel)]="qty"
+            />
+        </div>
+        <div class="col-md-4">
+            <label for="usr">Amount</label>
+            <input
+            autocomplete="off"
+              type="text"
+              placeholder="Enter Amount"
+              name="password"
+              class="form-control border1"
+              [(ngModel)]="amount"
+            />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 pt-2">
+            <button type="submit" class="btn btn-primary m-1" (click)="saveStock()" style="width:400px;">Submit</button>
+           
+        </div>
+    </div>
+    </div>
+</div>

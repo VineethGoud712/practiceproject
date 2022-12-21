@@ -1,0 +1,32 @@
+<div class="row m-1" style="height:40px!important;">
+  <div class="col-12 bg-color text-center" style="height:40px!important;">
+    <h5 class="text-white p-1">Stock Details</h5>
+  </div>
+</div>
+
+
+<div class="p-2">
+<table class="table m-0 tabled-bordered table-striped">
+    <thead class="thead-dark ">
+      <tr>
+        <th>S.No</th>
+        <th>Stock Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dtls;let i= index">
+        <td>{{i+1}}</td>
+        <td>{{data.id}}</td>
+        <td>{{data.firstName}}</td>
+        <td>{{data.lastName}}</td>
+        <td>{{data.qty}}</td>
+        <td>{{data.amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-color{
+    background:linear-gradient(#647DEE, #7F53AC);
+    width: 100%;
+    height:700px;
+}

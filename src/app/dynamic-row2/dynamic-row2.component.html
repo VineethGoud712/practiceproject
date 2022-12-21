@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col p-1">
+            <form [formGroup]="myform" (ngSubmit)="formdata()">
+               <div class="row" formArrayName="items">
+                <div class="col">
+                    <div class="row" *ngFor="let itm of myform.controls.items['controls']; let i = index;" [formGroupName]="i">
+                        <div class="col-md-4 p-1">
+                            <label for="">Iteml1</label>
+                            <input type="text" class="form-control" formControlName="item1">
+                        </div>
+                        <div class="col-md-4 p-1">
+                            <label for="">Iteml2</label>
+                            <input type="text" class="form-control" formControlName="item2">
+                        </div>
+                        <div class="col-md-4 p-2">
+                            <br/>
+                           <button type="button" class="btn btn-danger btn-sm" (click)="deleteRow(i)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+               </div>
+
+            </form>
+             <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" (click)="addRow()">AddRow</button>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>

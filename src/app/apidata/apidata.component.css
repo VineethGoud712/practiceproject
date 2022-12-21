@@ -1,0 +1,12 @@
+.high-light{
+    border: 2px solid white;
+    background: red;
+    color:white;
+    cursor: pointer;
+}
+.high-light2{
+    border:2px solid white;
+    background:green;
+    color:white;
+    cursor: pointer;
+}
